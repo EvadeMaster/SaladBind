@@ -113,7 +113,7 @@ You are now ready to go!
 
 ### Miner Setup Guide
 
-If you don't know what miner, algorithm or pool to pick, we have a [handy guide](MINERS.md).
+If you don't know what miner, algorithm or pool to pick, we have a [handy guide](https://wiki.litdevs.org/wiki/SaladBind/Miner_guide).
 
 ## Command line arguments
 

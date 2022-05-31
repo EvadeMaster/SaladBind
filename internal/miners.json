@@ -1,11 +1,11 @@
 {
     "algos": {
-        "ethash": 4805,
-        "etchash": 2945,
-        "kawpow": 3328,
+        "ethash": 4844,
+        "etchash": 2969,
+        "kawpow": 3367,
         "beamv3": 2000,
         "EQUI144_5": 2000,
-        "autolykos2": 2319,
+        "autolykos2": 2357,
         "octopus": 4720,
         "randomx": null
     },
@@ -13,8 +13,8 @@
         "phoenixminer": {
             "miner": "PhoenixMiner",
             "download": {
-                "win32": "https://phoenixminer.info/downloads/PhoenixMiner_6.0c_Windows.zip",
-                "linux": "https://phoenixminer.info/downloads/PhoenixMiner_6.0c_Linux.tar.gz"
+                "win32": "https://phoenixminer.info/downloads/PhoenixMiner_6.2c_Windows.zip",
+                "linux": "https://phoenixminer.info/downloads/PhoenixMiner_6.2c_Linux.tar.gz"
             },
             "algos": [
                 "ethash",
@@ -131,8 +131,8 @@
         "lolminer": {
             "miner": "lolMiner",
             "download": {
-                "win32": "https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.48/lolMiner_v1.48_Win64.zip",
-                "linux": "https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.48/lolMiner_v1.48_Lin64.tar.gz"
+                "win32": "https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.50/lolMiner_v1.50_Win64.zip",
+                "linux": "https://github.com/Lolliedieb/lolMiner-releases/releases/download/1.50/lolMiner_v1.50_Lin64.tar.gz"
             },
             "algos": [
                 "ethash",
@@ -154,16 +154,16 @@
                 "fileName": "lolMiner",
                 "algo": "--algo",
                 "wallet": "--user",
-                "pool": "--pool",
+                "pool": "--tls on --pool",
                 "pass": "--pass"
             }
         },
         "xmrig": {
             "miner": "XMRig",
             "download": {
-                "win32": "https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-gcc-win64.zip",
-                "linux": "https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-linux-x64.tar.gz",
-                "darwin": "https://github.com/xmrig/xmrig/releases/download/v6.16.4/xmrig-6.16.4-macos-x64.tar.gz"
+                "win32": "https://github.com/xmrig/xmrig/releases/download/v6.17.0/xmrig-6.17.0-gcc-win64.zip",
+                "linux": "https://github.com/xmrig/xmrig/releases/download/v6.17.0/xmrig-6.17.0-linux-x64.tar.gz",
+                "darwin": "https://github.com/xmrig/xmrig/releases/download/v6.17.0/xmrig-6.17.0-macos-x64.tar.gz"
             },
             "algos": [
                 "randomx"

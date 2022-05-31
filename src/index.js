@@ -174,6 +174,10 @@ async function menu(clear) {
 		value: 'changes'
 	},
 	{
+		name: 'SaladBind FAQ/Troubleshooting guide',
+		value: 'help'
+	},
+	{
 		name: 'Exit SaladBind',
 		value: 'exit'
 	}
@@ -222,6 +226,19 @@ if (fs.existsSync(`${dataDirectory}/last.json`)){
 						menu();
 					});
 				})
+			break;
+		case 'help':
+			let temp = await si.osInfo()
+			if (temp.platform == "linux") {
+				console.log("\nhttps://wiki.litdevs.org/wiki/SaladBind/FAQ");
+			} else {
+				open("https://wiki.litdevs.org/wiki/SaladBind/FAQ");
+				console.log("\nOpened the SaladBind troubleshooting page in your browser!");
+			}
+			setTimeout(() => {
+				process.title = `${aprilfools ? "VegetableJoiner" : "SaladBind"} v${packageJson.version}`; // very lazy solution, I know.
+				menu();
+			}, 3500);
 			break;
 		case 'exit':
 			console.clear();

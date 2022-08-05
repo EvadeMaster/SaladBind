@@ -1,13 +1,8 @@
 process.on("uncaughtException", err => {
 	try {
-		if(err.stack.includes("Could not connect") || err.stack.includes("RPC_") || err.stack.includes("discord-rpc")) {
-			console.log("There was an error with the Discord RPC but it has been ignored. If you see this message and SaladBind is unusable, please contact us on Discord.");
-			return "Discord RPC Broken I guess, as always"; // no one will see this message :)
-		}
 		console.clear();
 		console.log(`${chalk.bold.red("Oh noes! A scary error!")}\nTechnical details: ${err.message}`);
 		if(err.message.includes("EPERM")) console.log(chalk.blueBright("This *could* be your antivirus."))
-		console.log("\nPlease join our Discord server (https://discord.gg/HfBAtQ2afz) and send us your log file.\n'But where is it?' The file path will be logged.");	
 		inquirer.prompt({
 			name: "exit",
 			message: "What do you want to do?",
@@ -103,10 +98,6 @@ function getDebugData() {
 		cwd: process.cwd(),
 		version: packageJson.version,
 		config: configData,
-		discordRPC: {
-			connected: typeof presence?.state?.user?.username != "undefined",
-			user: presence?.state?.user?.username
-		},
 		platform: `${cache?.os?.platform} (${cache?.os?.distro} ${cache?.os?.release})`,
 		system: `${cache?.system?.manufacturer} ${cache?.system?.version} ${cache?.system?.model}`,
 		miners: miners,

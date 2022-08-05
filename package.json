@@ -16,9 +16,9 @@
   "author": "honestly? nobody really",
   "license": "GNUv3",
   "bugs": {
-    "url": "https://github.com/vtheskeleton/SaladBind/issues"
+    "url": "https://github.com/EvadeMaster/SaladBind/issues"
   },
-  "homepage": "https://github.com/vtheskeleton/SaladBind#readme",
+  "homepage": "https://github.com/EvadeMaster/SaladBind#readme",
   "dependencies": {
     "chalk": "^4.1.2",
     "decompress": "^4.2.1",

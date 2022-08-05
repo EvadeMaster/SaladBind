@@ -12,7 +12,7 @@
         "1.7.6: revive it",
         "1.7.7: fixed the updater on 1.7.6"
     ],
-    "force": true,
+    "force": false,
     "next_version": "1.6.0",
     "next_changelog": [
         "New settings menu",

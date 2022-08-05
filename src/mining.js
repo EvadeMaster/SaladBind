@@ -15,7 +15,6 @@ const { configFile, dataDirectory} = require("./setup");
 let rawdata = fs.readFileSync(configFile);
 const config = JSON.parse(rawdata);
 const { spawn, execSync } = require("child_process");
-const presence = require('./presence');
 const cache = require("./getMachine.js"); // wtf how is this cache haha
 let spinner;
 let isDev = config.dev != undefined && config.dev == true;
@@ -110,7 +109,6 @@ async function run() {
 async function continueMiner() {
 	console.clear();
 	console.log(chalk.bold.cyan(`Configure your miner`))
-	presence.configuring("Selecting miner");
 	spinner = ora("Loading miner list").start();
 	fetch(`https://raw.githubusercontent.com/vtheskeleton/SaladBind/${isDev ? "dev" : "main"}/internal/miners.json`)
 		.then(res => res.json())
@@ -201,7 +199,6 @@ async function continueMiner() {
 					}]
 				});
 				if (miner.miner == "go_back") {
-					presence.mainmenu()
 					menu(true);
 					return;
 				}
@@ -255,7 +252,6 @@ async function continueMiner() {
 async function selectAlgo(minerData, GPUs) {
 	console.clear();
 	console.log(chalk.bold.cyan(`Configure your miner`))
-	presence.configuring("Selecting algorithm");
 	let algoList = [];
 	if (minerData.algos.includes("randomx")) algoList.push({ name: "randomx", value: "randomx" });
 	const gpuSupportsAlgo = minerData.algos.filter(algo => GPUs.filter(gpu => gpu.algos.includes(algo)).length > 0)
@@ -294,7 +290,6 @@ async function selectAlgo(minerData, GPUs) {
 async function selectPool(minerData, algo) {
 	console.clear();
 	console.log(chalk.bold.cyan(`Configure your miner`))
-	presence.configuring("Selecting pool");
 	spinner = ora("Loading pool list").start();
 	fetch(`https://raw.githubusercontent.com/vtheskeleton/SaladBind/${isDev ? "dev" : "main"}/internal/pools.json`)
 		.then(res => res.json())
@@ -323,7 +318,6 @@ async function selectPool(minerData, algo) {
 			} else {
 				console.log(chalk.green(`Only one pool available with these settings, using ${poolList[0].name}`))
 			}
-			presence.configuring("Selecting pool region (just pick the closest one)");
 			const regionList = [];
 			const poolsy = poolList.length > 1 ? pool.pool : poolList[0].value;
 			for (let i = 0; i < poolsy.regions.length; i++) {
@@ -456,7 +450,6 @@ async function prepStart(minerData, algo, pool, region, advancedCommands, quick=
 		resolve(false);
 	}});
 	console.log(chalk.bold.cyan(`Configure your miner`))
-	presence.configuring("About to start!");
 	if (advancedCommands.length > 0) {
 		console.log("Current Advanced Commands:")
 		console.log(advancedCommands)
@@ -485,7 +478,6 @@ async function prepStart(minerData, algo, pool, region, advancedCommands, quick=
 				...lastMiner,
 				"advancedCommands": advancedCommands
 			});
-			presence.mine(minerData.miner, algo, pool.name)
 			// Check if miner is already running in salad using child processes to run "tasklist" if on windows.
 			if(await saladMining) {
 				console.log(chalk.bold.red(`It seems like you are mining using a miner already! It is not recommended to use 2 miners at once.`));
@@ -774,7 +766,6 @@ async function quick(cli=false){
 	try{
 		details = JSON.parse(fs.readFileSync(`${dataDirectory}/last.json`))
 		lastMiner = details;
-		presence.mine(details.data.miner, details.algo, details.pool)
 		if(!cli) prepStart(details.data, details.algo, details.pool, details.region, details.advancedCommands, true);
 		if(cli) startMiner(details.data, details.algo, details.pool, details.region, details.advancedCommands);
 	} catch {

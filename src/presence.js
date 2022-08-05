@@ -16,7 +16,7 @@ if (!fs.existsSync(configFile)) {
 if (config.discordPresence == true) { //If the user opts-in to having the Rich Presence then try connent to the rich presence application
 	try {
 		client.login({
-			clientId: '872392087440621579'
+			clientId: ''
 		});
 	} catch (error) { // Ignoring the error since we dont want SaladBind dying when the user doesn't have Discord open
 	}

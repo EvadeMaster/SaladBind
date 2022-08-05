@@ -1,3 +1,6 @@
+# SaladBind (pre-v1.7.8 - vtheskeleton/SaladBind)
+This is an fork of vtheskeleton/SaladBind, all mentions of it's former owner, LIT Devs, have been removed, This repo will not receive update ever ever.
+
 
 **This application is not affiliated with Salad Technologies.** 
 
@@ -15,10 +18,6 @@ SaladBind is pretty much abandoned, nobody really works on it.
 [Configuration](#Configuration) <br>
 [Miner Setup Guide](#Miner-Setup-Guide) <br>
 [Compiling](#Compiling)
-
-SaladBind is no longer made by LIT Devs, or associated with LIT Devs. Please stop bothering them about it.
-
-If you need support you're looking for the [SaladBind FAQ](https://wiki.litdevs.org/wiki/SaladBind/FAQ).
 
 ## Features
 
@@ -38,11 +37,11 @@ If you need support you're looking for the [SaladBind FAQ](https://wiki.litdevs.
 
 ### Windows
 
-Download the `saladbind-win.exe` from [GitHub Releases](https://github.com/vtheskeleton/SaladBind/releases/latest).
+Download the `saladbind-win.exe` from [GitHub Releases](https://github.com/EvadeMaster/SaladBind/releases/latest).
 
 ### macOS and Linux
 
-Download the `saladbind-macos`/`saladbind-linux` file from [GitHub Releases](https://github.com/vtheskeleton/SaladBind/releases/latest). For these platforms, you'll need to run SaladBind from the terminal, due to how SaladBind works. If you need help with using the terminal, don't be afraid to Google a bit - you'll have to use `cd` to be in the same folder that SaladBind is in.
+Download the `saladbind-macos`/`saladbind-linux` file from [GitHub Releases](https://github.com/EvadeMaster/SaladBind/releases/latest). For these platforms, you'll need to run SaladBind from the terminal, due to how SaladBind works. If you need help with using the terminal, don't be afraid to Google a bit - you'll have to use `cd` to be in the same folder that SaladBind is in.
 
 Use these commands to start SaladBind, for macOS or Linux respectively:
 
@@ -113,7 +112,7 @@ You are now ready to go!
 
 ### Miner Setup Guide
 
-If you don't know what miner, algorithm or pool to pick, we have a [handy guide](https://wiki.litdevs.org/wiki/SaladBind/Miner_guide).
+If you don't know what miner, algorithm or pool to pick, we have a handy guide.
 
 ## Command line arguments
 

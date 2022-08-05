@@ -61,7 +61,6 @@ const fetch = require("node-fetch");
 const open = require("open");
 const si = require("systeminformation");
 const update = require("./update.js")
-const presence = require("./presence.js");
 const { configFile, dataDirectory, saladbind_directory, run} = require("./setup");
 const envPaths = require('env-paths');
 
@@ -105,11 +104,6 @@ function getDebugData() {
 		gpus: cache?.graphics?.controllers,
 	}
 }
-
-presence.state.on('ready', () => {
-	presence.enable();
-	presence.mainmenu();
-})
 if(process.argv[process.argv.length-1] == "-d") {
 	try {
 		fs.writeFileSync(`${envPaths('SaladBind', { suffix: "" }).log}/saladbind-debug.txt`, JSON.stringify(getDebugData(), null, " "));
@@ -149,7 +143,6 @@ async function menu(clear) {
 	if (clear == undefined || clear == true) {
 		console.clear();
 	}
-	presence.mainmenu();
 	console.log(chalk.bold.green(`${aprilfools ? "VegetableJoiner" : "SaladBind"} v${packageJson.version}\nFor support see https://wiki.litdevs.org/wiki/SaladBind/FAQ`));
 	console.log("Please note that there is absolutely no support for SaladBind.")
 	let choices = [{
@@ -194,11 +187,9 @@ if (fs.existsSync(`${dataDirectory}/last.json`)){
 			require("./mining").run();
 			break;
 		case 'config':
-			presence.configuring("Changing settings")
 			require("./setup").run();
 			break;
 		case 'changes':
-			presence.configuring("Reading the changelog")
 			const spinner = ora('Fetching the Changelogs').start();
 			fetch('https://raw.githubusercontent.com/EvadeMaster/SaladBind/main/internal/changelog.json')
 				.then(res => res.json())

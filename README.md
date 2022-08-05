@@ -1,5 +1,5 @@
-# SaladBind (pre-v1.7.8 - vtheskeleton/SaladBind)
-This is an fork of vtheskeleton/SaladBind, all mentions of it's former owner, LIT Devs, have been removed, This repo will not receive update ever ever.
+# SaladBind (almost vtheskeleton/SaladBind v1.7.8 - EvadeMaster/SaladBind)
+This is an fork of vtheskeleton/SaladBind, This repo will not receive update ever ever.
 
 
 **This application is not affiliated with Salad Technologies.** 

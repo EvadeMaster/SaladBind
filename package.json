@@ -1,6 +1,6 @@
 {
   "name": "saladbind",
-  "version": "1.7.7",
+  "version": "1.7.8",
   "description": "BIND-ing the good features from other projects together (and fucking nuking the bad ones)",
   "main": "src/index.js",
   "scripts": {
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/vtheskeleton/SaladBind.git"
+    "url": "git+https://github.com/EvadeMaster/SaladBind.git"
   },
   "author": "honestly? nobody really",
   "license": "GNUv3",
@@ -20,19 +20,19 @@
   },
   "homepage": "https://github.com/EvadeMaster/SaladBind#readme",
   "dependencies": {
-    "chalk": "^5.0.1",
+    "chalk": "^4.1.2",
     "decompress": "^4.2.1",
     "decompress-targz": "^4.1.1",
     "decompress-unzip": "^4.0.1",
     "discord-rpc": "^4.0.1",
-    "env-paths": "^3.0.0",
+    "env-paths": "^2.2.1",
     "https": "^1.0.0",
-    "inquirer": "^9.1.0",
+    "inquirer": "^8.2.0",
     "mv": "^2.1.1",
-    "node-fetch": "^3.2.10",
+    "node-fetch": "^2.6.7",
     "open": "^8.4.0",
-    "ora": "^6.1.2",
-    "systeminformation": "^5.12.3"
+    "ora": "^5.4.1",
+    "systeminformation": "^5.11.3"
   },
   "devDependencies": {
     "pkg": "^5.8.0"
